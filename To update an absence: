@@ -1,0 +1,6 @@
+@PutMapping("/api/attendance/{attendanceId}")
+public Absence updateAttendance(@PathVariable Long attendanceId, @RequestBody Absence absence) {
+    Absence existingAttendance = absenceRepository.findById(attendanceId).orElseThrow();
+    existingAttendance.setStatus(absence.getStatus());
+    return absenceRepository.save(existingAttendance);
+}
