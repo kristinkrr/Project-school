@@ -1,0 +1,4 @@
+@GetMapping("/api/students/{studentId}/grades")
+public List<Grade> getGradesByStudent(@PathVariable Long studentId) {
+    return gradeRepository.findByStudentId(studentId);
+}
