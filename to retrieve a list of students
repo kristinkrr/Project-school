@@ -1,0 +1,7 @@
+
+*За извличане на списък с ученици:*
+
+@GetMapping("/api/students")
+public List<Student> getAllStudents() {
+    return studentRepository.findAll();
+}
