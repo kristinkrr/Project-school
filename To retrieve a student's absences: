@@ -1,0 +1,4 @@
+@GetMapping("/api/students/{studentId}/attendance")
+public List<Absence> getAttendanceByStudent(@PathVariable Long studentId) {
+    return absenceRepository.findByStudentId(studentId);
+}
