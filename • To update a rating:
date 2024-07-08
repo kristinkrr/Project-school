@@ -1,0 +1,6 @@
+@PutMapping("/api/grades/{gradeId}")
+public Grade updateGrade(@PathVariable Long gradeId, @RequestBody Grade grade) {
+    Grade existingGrade = gradeRepository.findById(gradeId).orElseThrow();
+    existingGrade.setValue(grade.getValue());
+    return gradeRepository.save(existingGrade);
+}
